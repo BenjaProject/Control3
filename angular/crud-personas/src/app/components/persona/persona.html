@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Personaas</title>
+</head>
+<body>
+    <h2>CRUD Personas</h2>
+    <form (ngSubmit)="guardar()">
+        <input type="text" [(ngModel)] = "persona.nombre" name="nombre" placeholder="Nombre" required>
+        <button type="submit">Guardar</button>
+
+    </form>
+    <hr>
+
+    <ul>
+        <li *ngFor="let p of personas">
+            {{p.id}} - {{p.nombre}}
+            <button (click)="editar(p)">Editar</button>
+            <button (click)="eliminar(p.id)">Eliminar</button>
+
+        </li>
+
+    </ul>
+    
+</body>
+</html>
